@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../asset/logo-new-violet.webp";
-import { ArrowDown2, ArrowRight2, HambergerMenu, Add } from "iconsax-react";
+import { HambergerMenu } from "iconsax-react";
 
 function NavBar() {
   const [icon, setIcon] = React.useState(false);
