@@ -1,0 +1,161 @@
+.slide-track {
+  /* animation-name: drift;
+	animation-duration: 25s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite; */
+
+  animation: drift 40s linear infinite;
+}
+
+/* .slide-track:hover {
+  animation-play-state: paused;
+} */
+
+.slide {
+  perspective: 100px;
+}
+
+.test-card {
+  transition: transform 1s;
+}
+
+/* .slide-track:hover .test-card:hover {
+  transform: translateZ(5px);
+} */
+
+@keyframes drift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-3140px);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes drift {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-3910px);
+    }
+  }
+}
+
+/* React Slick Dot styles */
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem 0;
+
+  list-style-type: none;
+}
+
+.slick-dots li {
+  /* margin: 0 0.25rem;
+  transform: "translateY(1em)";
+  width: 30px;
+  height: 30px;
+  background-color: blue; */
+  font-size: 0;
+  line-height: 0;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  display: inline-block;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  border-radius: 100%;
+}
+
+.slick-dots li button {
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  background: transparent;
+  color: transparent;
+}
+
+.slick-dots li button:before {
+  transition: 0.2s;
+  content: "";
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  background: #2d3139;
+  opacity: 0.25;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: black;
+}
+.name::before,
+.name::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(
+    70% - 1200px
+  ); /* Adjust the width for the desired blurred effect */
+  background: linear-gradient(to left, transparent, #fff) left,
+    linear-gradient(to right, transparent, #fff) right;
+  z-index: 1; /* Ensure the blurred effect is above the content */
+}
+
+.name::before {
+  left: 0;
+}
+
+.name::after {
+  right: 0;
+}
+
+@keyframes drift-reverse {
+  0% {
+    transform: translateX(-3140px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes drift-reverse {
+    0% {
+      transform: translateX(-3910px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.slide-track-reverse {
+  animation: drift-reverse 40s linear infinite;
+}
+
+.intercom-lightweight-app-launcher-icon {
+  position: fixed;
+  right: 20px; /* Adjust the right property as needed */
+  bottom: 20px; /* Adjust the bottom property as needed */
+  width: 32px; /* Set the desired width */
+  height: 32px; /* Set the desired height */
+  clip-path: circle(50%);
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.intercom-lightweight-app-launcher-icon circle {
+  fill: #000;
+  transition: fill 0.3s ease;
+}
+
+.intercom-lightweight-app-launcher-icon:hover circle {
+  fill: #fff; /* Change the color as needed */
+}
